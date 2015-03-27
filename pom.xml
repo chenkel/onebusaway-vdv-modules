@@ -23,9 +23,9 @@
   </repositories>
 
   <scm>
-    <connection>scm:git:http://github.com/OneBusAway/onebusaway-vdv-modules.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/OneBusAway/onebusaway-vdv-modules.git</developerConnection>
-    <url>http://github.com/OneBusAway/onebusaway-vdv-modules</url>
+    <connection>scm:git:http://github.com/chenkel/onebusaway-vdv-modules.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/chenkel/onebusaway-vdv-modules.git</developerConnection>
+    <url>http://github.com/chenkel/onebusaway-vdv-modules</url>
   </scm>
 
   <issueManagement>
