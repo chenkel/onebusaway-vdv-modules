@@ -80,7 +80,13 @@ public class Vdv452ToGtfsFactory {
     if (trip == null) {
       trip = new Trip();
       trip.setId(id);
-      trip.setRoute(getRouteForLine(journey.getLine()));
+      Line line = journey.getLine();
+      trip.setRoute(getRouteForLine(line));
+
+//      if (line.getDirectionId() != null && !line.getDirectionId().isEmpty()) {
+        trip.setDirectionId(line.getDirectionId());
+//      }
+
       trip.setServiceId(createCalendarEntriesForDayType(journey.getDayType()));
       getStopTimesForJourney(journey, trip);
       _out.saveEntity(trip);
@@ -133,7 +139,7 @@ public class Vdv452ToGtfsFactory {
       agency.setId(agencyId);
       agency.setName(company.getName());
       agency.setTimezone(_tz.getID());
-      agency.setUrl("https://github.com/OneBusAway/onebusaway-vdv-modules");
+      agency.setUrl("http://goevb.de/");
       agency.setLang("de");
       _out.saveEntity(agency);
     }
@@ -175,6 +181,7 @@ public class Vdv452ToGtfsFactory {
         throw new IllegalStateException("unknown stop: " + stopId);
       }
       gtfsStop.setName(vdvStop.getName());
+        gtfsStop.setDesc(vdvStop.getDesc());
       gtfsStop.setLat(vdvStop.getLat());
       gtfsStop.setLon(vdvStop.getLng());
       _out.saveEntity(gtfsStop);

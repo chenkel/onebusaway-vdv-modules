@@ -31,6 +31,9 @@ public class Stop extends IdentityBean<StopId> {
   @CsvField(name = "ORT_NAME")
   private String name;
 
+  @CsvField(name = "ORT_REF_ORT_NAME")
+  private String desc;
+
   @CsvField(name = "ORT_POS_BREITE", mapping=DegressMinutesSecondsFieldMappingFactory.class)
   private double lat;
 
@@ -53,6 +56,14 @@ public class Stop extends IdentityBean<StopId> {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getDesc() {
+    return desc;
+  }
+
+  public void setDesc(String desc) {
+    this.desc = desc;
   }
 
   public double getLat() {
